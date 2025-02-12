@@ -1,0 +1,21 @@
+backend:
+  name: github
+  repo: yourusername/shadowgarden
+  branch: main
+
+media_folder: "images/uploads" 
+public_folder: "/images/uploads"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - name: "index"
+        label: "Homepage"
+        file: "index.html"
+        fields:
+          - { name: "works", label: "Works Section", widget: "markdown" }
+          - { name: "about", label: "About Section", widget: "markdown" }
+          - { name: "garden", label: "Garden Section", widget: "markdown" }
+          - { name: "shop", label: "Shop Section", widget: "markdown" }
+          - { name: "contact", label: "Contact Section", widget: "markdown" }
