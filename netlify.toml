@@ -1,9 +1,6 @@
 [build]
-  publish = "public"
-  command = "npm run build"
-
-[template]
-  incoming-hooks = ["visual-editor"]
+  command = ""  # No build command needed for static HTML
+  publish = "/"  # Set the root folder as the publish directory
 
 [[headers]]
   for = "/*"
