@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow Garden</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        body {
+            background-color: #FFFFFF;
+            color: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+        .red-square {
+            position: absolute;
+            top: 50px;
+            left: 40px;
+            width: 10px;
+            height: 10px;
+            background-color: red;
+        }
+        .red-plus {
+            position: absolute;
+            top: 50vh;
+            left: 50vw;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .red-plus::before,
+        .red-plus::after {
+            content: '';
+            position: absolute;
+            background-color: red;
+        }
+        .red-plus::before {
+            width: 4px;
+            height: 20px;
+        }
+        .red-plus::after {
+            width: 20px;
+            height: 4px;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .logo {
+            font-size: 0.6rem;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .title img {
+            height: 140px;
+            max-width: 100%;
+        }
+        .title span {
+            font-size: 5rem;
+            font-weight: bold;
+            margin-left: -5px;
+        }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1000px;
+            margin-top: 30px;
+            font-size: 0.6rem;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #000;
+        }
+        .footer {
+            margin-top: 80px;
+            font-size: 0.8rem;
+        }
+        section {
+            width: 100%;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 50px 20px;
+            border-top: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="red-square"></div>
+    <div class="red-plus"></div>
+    <div class="container">
+        <div class="logo">SHADOWGARDEN©</div>
+        <div class="title">
+            <img src="https://i.imgur.com/M7df8pM.jpeg" alt="Shadow" />
+            <span>GARDEN<sup style="font-size: 0.3em; position: relative; top: -40px; left: 10px; font-family: 'Inter', sans-serif; font-weight: normal;">(LL)</sup></span>
+        </div>
+        <div class="nav">
+            <a href="#works">01 Works</a>
+            <a href="#about">02 About</a>
+            <a href="#garden">03 Garden</a>
+            <a href="#shop">04 Shop</a>
+            <a href="#contact">05 Contact</a>
+        </div>
+        <div class="footer">A space for storytelling, design, and creativity. Rooted in LA, made for everywhere.</div>
+    </div>
+    
+    <section id="works">
+        <h2>Works</h2>
+        <p>Showcase of creative projects and collaborations.</p>
+    </section>
+    
+    <section id="about">
+        <h2>About</h2>
+        <p>Learn more about Shadow Garden and our mission.</p>
+    </section>
+    
+    <section id="garden">
+        <h2>Garden</h2>
+        <p>Exploring ideas, inspirations, and creative experiments.</p>
+    </section>
+    
+    <section id="shop">
+        <h2>Shop</h2>
+        <p>Browse curated selections of our work and products.</p>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Get in touch with us for inquiries and collaborations.</p>
+    </section>
+</body>
+</html>
