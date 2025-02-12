@@ -124,29 +124,22 @@
         <div class="footer">A space for storytelling, design, and creativity. Rooted in LA, made for everywhere.</div>
     </div>
     
-    <section id="works">
-        <h2>Works</h2>
-        <p>{{ works }}</p>
-    </section>
-    
-    <section id="about">
-        <h2>About</h2>
-        <p>{{ about }}</p>
-    </section>
-    
-    <section id="garden">
-        <h2>Garden</h2>
-        <p>{{ garden }}</p>
-    </section>
-    
-    <section id="shop">
-        <h2>Shop</h2>
-        <p>{{ shop }}</p>
-    </section>
-    
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>{{ contact }}</p>
-    </section>
+    <script>
+        fetch('content.json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("works-text").innerText = data.works;
+                document.getElementById("about-text").innerText = data.about;
+                document.getElementById("garden-text").innerText = data.garden;
+                document.getElementById("shop-text").innerText = data.shop;
+                document.getElementById("contact-text").innerText = data.contact;
+            });
+    </script>
+
+    <section id="works"><h2>Works</h2><p id="works-text"></p></section>
+    <section id="about"><h2>About</h2><p id="about-text"></p></section>
+    <section id="garden"><h2>Garden</h2><p id="garden-text"></p></section>
+    <section id="shop"><h2>Shop</h2><p id="shop-text"></p></section>
+    <section id="contact"><h2>Contact</h2><p id="contact-text"></p></section>
 </body>
 </html>
