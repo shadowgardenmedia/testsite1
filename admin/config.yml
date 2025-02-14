@@ -1,21 +1,23 @@
 backend:
-  name: github
-  repo: yourusername/shadowgarden
-  branch: main
+  name: git-gateway
+  branch: main # Change if your default branch is different
 
-media_folder: "images/uploads" 
+media_folder: "images/uploads" # Where uploaded images will be stored
 public_folder: "/images/uploads"
 
 collections:
-  - name: "pages"
-    label: "Pages"
+  - name: "content"
+    label: "Site Content"
+    format: "json"
+    extension: "json"
+    identifier_field: "title"
     files:
-      - name: "index"
-        label: "Homepage"
-        file: "index.html"
+      - label: "Homepage Content"
+        name: "homepage"
+        file: "content.json"
         fields:
-          - { name: "works", label: "Works Section", widget: "markdown" }
-          - { name: "about", label: "About Section", widget: "markdown" }
-          - { name: "garden", label: "Garden Section", widget: "markdown" }
-          - { name: "shop", label: "Shop Section", widget: "markdown" }
-          - { name: "contact", label: "Contact Section", widget: "markdown" }
+          - { label: "Works", name: "works", widget: "string" }
+          - { label: "About", name: "about", widget: "string" }
+          - { label: "Garden", name: "garden", widget: "string" }
+          - { label: "Shop", name: "shop", widget: "string" }
+          - { label: "Contact", name: "contact", widget: "string" }
