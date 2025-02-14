@@ -16,6 +16,7 @@ collections:
         name: "homepage"
         file: "content.json"
         fields:
+          - { label: "Title", name: "title", widget: "string" } 
           - { label: "Works", name: "works", widget: "string" }
           - { label: "About", name: "about", widget: "string" }
           - { label: "Garden", name: "garden", widget: "string" }
