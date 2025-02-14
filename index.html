@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shadow Garden</title>
+    
+    <!-- Netlify CMS -->
     <script src="https://unpkg.com/netlify-cms@2/dist/netlify-cms.js"></script>
+
     <style>
         * {
             margin: 0;
@@ -57,7 +60,6 @@
         .container {
             width: 90%;
             max-width: 1200px;
-            text-align: center;
             margin-top: 50px;
         }
         .logo {
@@ -108,38 +110,68 @@
 <body>
     <div class="red-square"></div>
     <div class="red-plus"></div>
+    
     <div class="container">
         <div class="logo">SHADOWGARDEN©</div>
         <div class="title">
             <img src="https://i.imgur.com/M7df8pM.jpeg" alt="Shadow" />
             <span>GARDEN<sup style="font-size: 0.3em; position: relative; top: -40px; left: 10px; font-family: 'Inter', sans-serif; font-weight: normal;">(LL)</sup></span>
         </div>
-        <div class="nav">
+        <nav class="nav">
             <a href="#works">01 Works</a>
             <a href="#about">02 About</a>
             <a href="#garden">03 Garden</a>
             <a href="#shop">04 Shop</a>
             <a href="#contact">05 Contact</a>
-        </div>
-        <div class="footer">A space for storytelling, design, and creativity. Rooted in LA, made for everywhere.</div>
+        </nav>
+        <footer class="footer">
+            A space for storytelling, design, and creativity. Rooted in LA, made for everywhere.
+        </footer>
     </div>
-    
-    <script>
-        fetch('content.json')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById("works-text").innerText = data.works;
-                document.getElementById("about-text").innerText = data.about;
-                document.getElementById("garden-text").innerText = data.garden;
-                document.getElementById("shop-text").innerText = data.shop;
-                document.getElementById("contact-text").innerText = data.contact;
-            });
-    </script>
 
-    <section id="works"><h2>Works</h2><p id="works-text"></p></section>
-    <section id="about"><h2>About</h2><p id="about-text"></p></section>
-    <section id="garden"><h2>Garden</h2><p id="garden-text"></p></section>
-    <section id="shop"><h2>Shop</h2><p id="shop-text"></p></section>
-    <section id="contact"><h2>Contact</h2><p id="contact-text"></p></section>
+    <!-- Sections with default content -->
+    <section id="works">
+        <h2>Works</h2>
+        <p id="works-text">Loading...</p>
+    </section>
+    <section id="about">
+        <h2>About</h2>
+        <p id="about-text">Loading...</p>
+    </section>
+    <section id="garden">
+        <h2>Garden</h2>
+        <p id="garden-text">Loading...</p>
+    </section>
+    <section id="shop">
+        <h2>Shop</h2>
+        <p id="shop-text">Loading...</p>
+    </section>
+    <section id="contact">
+        <h2>Contact</h2>
+        <p id="contact-text">Loading...</p>
+    </section>
+
+    <!-- Fetch Content from content.json -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("content.json")
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Failed to load content.json");
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    document.getElementById("works-text").innerText = data.works || "No content available.";
+                    document.getElementById("about-text").innerText = data.about || "No content available.";
+                    document.getElementById("garden-text").innerText = data.garden || "No content available.";
+                    document.getElementById("shop-text").innerText = data.shop || "No content available.";
+                    document.getElementById("contact-text").innerText = data.contact || "No content available.";
+                })
+                .catch(error => {
+                    console.error("Error loading content:", error);
+                });
+        });
+    </script>
 </body>
 </html>
